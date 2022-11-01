@@ -35,7 +35,7 @@ const Header = (props) => {
         return <Fragment>
             <button className="self-center px-8 py-3 rounded" onClick={() => {
                 history.push('/profile')
-            }}>Hello! <span className='text-orange-500'>{userLogin.taiKhoan}</span>
+            }}>Xin chào ! <span className='text-orange-500'>{userLogin.taiKhoan}</span>
             </button>
             <button className="text-green-500 mr-5" onClick={() => {
                 localStorage.removeItem(USER_LOGIN);

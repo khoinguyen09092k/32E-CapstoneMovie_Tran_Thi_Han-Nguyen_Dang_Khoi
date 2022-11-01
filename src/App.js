@@ -42,13 +42,8 @@ function App() {
         <HomeTemplate path='/profile' exact Component={Profile} />
         <UserTemplate path='/login' exact Component={Login} />
         <CheckoutTemplate path='/checkout/:id' exact Component={Checkout} />
-
-        {/* Suspense bọc những Component muốn tạo hiệu ứng Loading bằng 1 component Loader */}
-        {/* <Suspense fallback={<Loader />}>
-          <CheckoutTemplateLazy path='/checkout/:id' exact Component={Checkout} />
-        </Suspense> */}
-
         <UserTemplate path='/register' exact Component={Register} />
+        
         <AdminTemplate path='/admin' exact Component={Dashboard} />
         <AdminTemplate path='/admin/films' exact Component={Films} />
         <AdminTemplate path='/admin/films/addnew' exact Component={AddNew} />
