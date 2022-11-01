@@ -27,18 +27,18 @@ const Detail = (props) => {
   return (
     <div style={{ backgroundImage: `url(${filmdetail.hinhAnh})`, backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh' }}>
       {/* Phần background mờ */}
-      <div className='glassBackground' style={{ paddingTop: 150, minHeight: '100vh' }}>
+      <div className='glassBackground ' style={{ paddingTop: 150, minHeight: '100vh' }}>
         <div className="grid grid-cols-12">
           <div className="col-span-5 col-start-3">
             <div className='grid grid-cols-2'>
               <div className='flex items-center'>
               <img src={filmdetail.hinhAnh} alt={filmdetail.tenPhim} />
               </div>
-              <div className='flex items-center'>
+              <div className='flex items-center m-4'>
                 <div className='ml-2 text-white'>
-                  <p>Ngày chiếu: <span className='text-green-400'>{moment(filmdetail.ngayKhoiChieu).format('DD-MM-YYYY hh:mm A')}</span></p>
+                  <p className='text-lg'>Ngày chiếu: <span className='text-yellow-400'>{moment(filmdetail.ngayKhoiChieu).format('DD-MM-YYYY hh:mm A')}</span></p>
                   <p className='text-2xl font-bold'>{filmdetail.tenPhim}</p>
-                  <p>{filmdetail.moTa}</p>
+                  <p className='text-grey-300'>{filmdetail.moTa}</p>
                 </div>
               </div>
             </div>
@@ -46,7 +46,7 @@ const Detail = (props) => {
           <div className='col-span-4 flex items-center justify-center flex-col'>
             {/* Phần 'rating circle' */}
             <h1 className='text-2xl font-bold text-yellow-400 mr-8'>Rating</h1>
-            <h1 className='text-2xl text-green-400 flex justify-center items-center mr-10'><Rate allowHalf value={filmdetail.danhGia / 2} style={{ color: '#78ed78', fontSize: 30 }} /></h1>
+            <h1 className='text-2xl  text-yellow-400 flex justify-center items-center mr-10'><Rate allowHalf value={filmdetail.danhGia / 2} style={{ color: '#78ed78', fontSize: 30 }} /></h1>
             <div className={`c100 p${(filmdetail.danhGia) * 10} big`}>
               <span>{(filmdetail.danhGia) * 10}%</span>
               <div className="slice">

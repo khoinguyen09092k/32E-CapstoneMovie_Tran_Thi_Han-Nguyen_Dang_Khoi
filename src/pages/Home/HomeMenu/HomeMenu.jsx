@@ -29,17 +29,17 @@ const HomeMenu = (props) => {
                         }
                             key={index}>
                             {/*Load phim tương ứng */}
-                            {cumRap.danhSachPhim.slice(0, 4).map((phim, index) => {
+                            {cumRap.danhSachPhim.slice(0, 6).map((phim, index) => {
                                 return <Fragment key={index}>
                                     <div className="my-5" >
                                         <div style={{ display: 'flex', alignItems:'center' }}>
                                             <img style={{ height: 75, width: 75 }} src={phim.hinhAnh} alt={phim.tenPhim} onError={(e) => { e.target.onerror = null; e.target.src = "https://picsum.photos/75/75" }} />
 
                                             <div className="ml-2">
-                                                <h1 className="text-2xl text-green-700" >{phim.tenPhim}</h1>
+                                                <h1 className="text-2xl text-white" >{phim.tenPhim}</h1>
                                                 <div className="grid grid-cols-3 gap-6">
-                                                    {phim.lstLichChieuTheoPhim?.slice(0, 12).map((lichChieu, index) => {
-                                                        return <NavLink className="text-lg text-green-400" to={`/checkout/${lichChieu.maLichChieu}`} key={index}>
+                                                    {phim.lstLichChieuTheoPhim?.slice(0, 10).map((lichChieu, index) => {
+                                                        return <NavLink className="text-sm text-yellow-500 ml-3" to={`/checkout/${lichChieu.maLichChieu}`} key={index}>
                                                             {moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}
                                                         </NavLink>
                                                     })}
