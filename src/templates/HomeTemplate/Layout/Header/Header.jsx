@@ -63,7 +63,9 @@ const Header = (props) => {
                 <li className="flex">
                     <NavLink rel="noopener noreferrer" to="/news" className="flex items-center px-4 -mb-1  dark:border-transparent text-white" activeClassName='border-b-2 border-white'>News</NavLink>
                 </li>
-              
+                <li className="flex">
+                    <NavLink rel="noopener noreferrer" to="/admin" className="flex items-center px-4 -mb-1  dark:border-transparent text-white" activeClassName='border-b-2 border-white'>Quản Lí Admin Movie</NavLink>
+                </li>
             
             </ul>
             <div className="items-center flex-shrink-0 hidden lg:flex"  style={{fontSize:'18px'}}>
