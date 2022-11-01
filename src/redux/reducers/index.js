@@ -1,6 +1,0 @@
-export * from './carouselReducer'
-export * from './quanLyPhimReducer'
-export * from './quanLyRapReducer'
-export * from './quanLyNguoiDungReducer'
-export * from './quanLyDatVeReducer'
-export * from './loadingReducer'
