@@ -12,14 +12,6 @@ const Home = () => {
   const { arrFilm } = useSelector(state => state.quanLyPhimReducer)
   const dispath = useDispatch()
   const {heThongRapChieu} = useSelector(state => state.quanLyRapReducer)
-  // console.log("arrFilm: ", arrFilm);
-
-  // const renderFilm = () => {
-  //   return arrFilm.map((phim, index) => {
-  //     return <Film key={index} />
-
-  //   })
-  // }
   useEffect(() => {
     const action = quanLyPhimAction.layDanhSachPhimAction()
     dispath(action) // dispatch function từ redux THUNK
@@ -27,16 +19,16 @@ const Home = () => {
   }, [])
 
   return (
-    <div>
+    <div className=''>
       <HomeCarousel />
-      {/* thư viện tailblocks.cc */}
-      <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto" style={{backgroundImage: 'url(https://img.freepik.com/free-psd/cinema-background-concept-old-tape_23-2148620888.jpg?w=2000', backgroundPosition:'center', backgroundSize:'cover'}}>
+    
+      <section className="text-gray-600 body-font " style={{backgroundImage: 'url(https://wallpaperaccess.com/full/655045.jpg)', backgroundPosition:'center', backgroundSize:'200%',backgroundRepeat:'no-repeat'}}>
+       
+        <div className="container px-5 py-24 mx-auto " >
           <MultipleRowSlick arrFilm={arrFilm} />
-          {/* <div className="flex flex-wrap justify-center -m-4">
-            {renderFilm()}
-          </div> */}
+       
         </div>
+    
       </section>
 
       <div className='mx-36'>
