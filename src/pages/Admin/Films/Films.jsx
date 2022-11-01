@@ -62,7 +62,14 @@ export default function Films() {
         {
             title: 'Mô tả',
             dataIndex: 'moTa',
-          
+            // sorter: (a, b) => {
+            //     let moTaA = a.moTa.toLowerCase().trim();
+            //     let moTaB = b.moTa.toLowerCase().trim();
+            //     if(moTaA > moTaB) {
+            //         return 1;
+            //     }
+            //     return -1;
+            // },
             render: (text, film) => {
                 return <Fragment>
                     {film.moTa.length > 50 ? film.moTa.substr(0, 50) + ' ...' : film.moTa}

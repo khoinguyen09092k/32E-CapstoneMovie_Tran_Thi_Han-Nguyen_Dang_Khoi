@@ -29,9 +29,10 @@ const Home = () => {
   return (
     <div>
       <HomeCarousel />
-      {/* thư viện tailblocks.cc */}
-      <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto" style={{backgroundImage: 'url(https://media.baodautu.vn/Images/chicuong/2021/06/05/12.jpg)', backgroundPosition:'center', backgroundSize:'cover'}}>
+    
+      <section className="text-gray-600 body-font " style={{backgroundImage: 'url(https://wallpaperaccess.com/full/655045.jpg)', backgroundPosition:'center', backgroundSize:'200%',backgroundRepeat:'no-repeat'}}>
+       
+        <div className="container px-5 py-24 mx-auto " >
           <MultipleRowSlick arrFilm={arrFilm} />
           {/* <div className="flex flex-wrap justify-center -m-4">
             {renderFilm()}

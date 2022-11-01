@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react'
-import { Route , Redirect} from 'react-router'
+import { Route } from 'react-router'
 import {
     DesktopOutlined,
     FileOutlined,
@@ -38,22 +38,10 @@ const AdminTemplate = (props) => {
 
     })
 
-
-    if(!localStorage.getItem(USER_LOGIN)){
-        alert("Bạn không có quyền truy cập vào trang này !")
-        return <Redirect to = '/'/>
-    }
-
-    if(userLogin.maLoaiNguoiDung !== 'QuanTri'){
-        alert("Bạn không có quyền truy cập vào trang này !")
-        return <Redirect to = '/'/>
-
-    }
-
     const operations = <Fragment>
     {!_.isEmpty(userLogin) ? <Fragment> <button onClick={() => {
         history.push('/profile')
-    }}> <div style={{ width: 50, height: 50, display: 'flex', justifyContent: 'center', alignItems: 'center' }} className="text-2xl ml-5 rounded-full bg-red-200">{userLogin.taiKhoan.substr(0, 1)}</div>Xin chào! <span className='text-blue-500'>{userLogin.taiKhoan}</span></button> <button onClick={() => {
+    }}> <div style={{ width: 50, height: 50, display: 'flex', justifyContent: 'center', alignItems: 'center' }} className="text-2xl ml-5 rounded-full bg-red-200">{userLogin.taiKhoan.substr(0, 1)}</div>Hello! <span className='text-blue-500'>{userLogin.taiKhoan}</span></button> <button onClick={() => {
         localStorage.removeItem(USER_LOGIN);
         localStorage.removeItem(TOKEN);
         history.push('/home');
@@ -88,7 +76,18 @@ const AdminTemplate = (props) => {
                             <NavLink to="/admin/showtimes">Showtime</NavLink>
 
                         </Menu.Item>
-                      
+                        {/* <SubMenu key="sub1" icon={<UserOutlined />} title="User">
+                            <Menu.Item key="3">Tom</Menu.Item>
+                            <Menu.Item key="4">Bill</Menu.Item>
+                            <Menu.Item key="5">Alex</Menu.Item>
+                        </SubMenu>
+                        <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
+                            <Menu.Item key="6">Team 1</Menu.Item>
+                            <Menu.Item key="8">Team 2</Menu.Item>
+                        </SubMenu>
+                        <Menu.Item key="9" icon={<FileOutlined />}>
+                            Files
+                        </Menu.Item> */}
                     </Menu>
                 </Sider>
                 <Layout className="site-layout">

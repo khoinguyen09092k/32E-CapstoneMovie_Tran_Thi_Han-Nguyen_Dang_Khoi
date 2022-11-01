@@ -32,6 +32,11 @@ const Checkout = (props) => {
     const action = quanLyDatVeAction.layChiTietPhongVeAction(props.match.params.id)
 
     dispatch(action)
+
+    //Load danh sách ghế đang đặt từ server về (lắng nghe tín hiệu từ server trả về)
+    // connection.on("loadDanhSachGheDaDat", (dsGheKhachDat) => {
+    //   console.log('danhSachGheKhachDat', dsGheKhachDat);
+    // })
   }, [])
 
 
@@ -74,6 +79,13 @@ const Checkout = (props) => {
     <div className="min-h-screen bg-black text-white" >
       <div className="grid grid-cols-12">
         <div className="col-span-9 flex flex-col items-center">
+          {/* //Màn hình, search kiếm css của hình thang */}
+          {/* // search: 'filter drop-shadow online' để tạo thêm độ bóng phù hợp với màn hình */}
+          <h3 className='text-orange-500 text-2xl font-bold'>Màn hình</h3>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-orange-500">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+          </svg>
+
           <div className={`${style['trapezoid']} mt-5`}>
           </div>
           {/* Hàng ghế */}
@@ -84,8 +96,8 @@ const Checkout = (props) => {
             <table className="border-collapse border border-slate-500">
               <thead className='px-5'>
                 <tr>
-                  <th className="border p-5 border-slate-600 ...">Loại Ghế</th>
-                  <th className="border border-slate-600 ...">Mô Tả</th>
+                  <th className="border p-5 border-slate-600 ...">Ghế</th>
+                  <th className="border border-slate-600 ...">Phân loại</th>
                 </tr>
               </thead>
               <tbody>
@@ -107,18 +119,34 @@ const Checkout = (props) => {
                 </tr>
                 <tr>
                   <td className="border p-4 border-slate-700 ...">
-                    <button className='bg-yellow-500 gheChuThich'><CheckOutlined style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} /></button>
+                    <button className='bg-green-500 gheChuThich'></button>
                   </td>
                   <td className="border px-2 border-slate-700 ...">
-                    <span className='text-xl text-yellow-500'>Ghế đã có người đặt</span>
+                    <span className='text-xl text-green-500'>Ghế đang chọn bởi bạn( Click lần 1 để chọn, lần 2 để xóa )</span>
                   </td>
                 </tr>
                 <tr>
                   <td className="border p-4 border-slate-700 ...">
-                    <button className='bg-green-500 gheChuThich'><UserOutlined style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} /></button>
+                    <button className='bg-yellow-500 gheChuThich'></button>
                   </td>
                   <td className="border px-2 border-slate-700 ...">
-                    <span className='text-xl text-green-500'>Ghế bạn đã đặt</span>
+                    <span className='text-xl text-yellow-500'>Ghế đã đặt</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border p-4 border-slate-700 ...">
+                    <button className='bg-yellow-500 gheChuThich'><CheckOutlined style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} /></button>
+                  </td>
+                  <td className="border px-2 border-slate-700 ...">
+                    <span className='text-xl text-yellow-500'>Ghế đã đặt bởi những người khác</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border p-4 border-slate-700 ...">
+                    <button className='bg-yellow-500 gheChuThich'><UserOutlined style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} /></button>
+                  </td>
+                  <td className="border px-2 border-slate-700 ...">
+                    <span className='text-xl text-yellow-500'>Ghế đã đặt bởi tài khoảng của bạn</span>
                   </td>
                 </tr>
               </tbody>
@@ -224,7 +252,7 @@ const App = (props) => {
       <Tabs.TabPane tab="KẾT QUẢ ĐẶT VÉ" key="2">
         <KetQuaDatVe {...props} />
       </Tabs.TabPane>
-      <Tabs.TabPane tab={<NavLink className='text-lg text-white' to='/home'>Quay lại trang chủ</NavLink>} key='3'>
+      <Tabs.TabPane tab={<NavLink className='text-lg text-white' to='/home'>Back to home</NavLink>} key='3'>
 
       </Tabs.TabPane>
     </Tabs>
@@ -269,7 +297,7 @@ const KetQuaDatVe = (props) => {
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
           <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Lịch sử đặt vé</h1>
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-blue-500">Thông Báo: Qúy khách vui lòng xem kĩ thông tin vé</p>
+          <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-blue-500">LƯU Ý: Xem kĩ thông tin về thời gian và địa điểm xem phim, tránh nhầm lẫn vì chúng tôi không khuyến khích việc đổi lại vé! Xin chân thành cảm ơn quý khách! (Đùa thôi, chứ quý khách là thượng đế ạ ^_^!)</p>
         </div>
         <div className="flex flex-wrap -m-2">
           {renderTicketItem()}
