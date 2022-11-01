@@ -35,7 +35,7 @@ const Header = (props) => {
         return <Fragment>
             <button className="self-center px-8 py-3 rounded" onClick={() => {
                 history.push('/profile')
-            }}>Hello! <span className='text-orange-500'>{userLogin.taiKhoan}</span>
+            }}>Xin chào ! <span className='text-orange-500'>{userLogin.taiKhoan}</span>
             </button>
             <button className="text-green-500 mr-5" onClick={() => {
                 localStorage.removeItem(USER_LOGIN);
@@ -64,6 +64,11 @@ const Header = (props) => {
                     <li className="flex">
                         <NavLink to='/news' rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 border-transparent text-white" activeClassName='border-b-2 border-white'>News</NavLink>
                     </li>
+
+                    <li className="flex">
+                        <NavLink to='/admin' rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 border-transparent text-white" activeClassName='border-b-2 border-white'>Quản Lí Phim</NavLink>
+                    </li>
+
                 </ul>
                 <div className="items-center flex-shrink-0 hidden lg:flex">
                     {renderLogin()}

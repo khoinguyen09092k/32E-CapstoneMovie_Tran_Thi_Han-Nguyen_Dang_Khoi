@@ -31,7 +31,7 @@ const Home = () => {
       <HomeCarousel />
       {/* thư viện tailblocks.cc */}
       <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto" style={{backgroundImage: 'url(https://img.freepik.com/free-psd/cinema-background-concept-old-tape_23-2148620888.jpg?w=2000', backgroundPosition:'center', backgroundSize:'cover'}}>
+        <div className="container px-5 py-24 mx-auto" style={{backgroundImage: 'url(https://media.baodautu.vn/Images/chicuong/2021/06/05/12.jpg)', backgroundPosition:'center', backgroundSize:'cover'}}>
           <MultipleRowSlick arrFilm={arrFilm} />
           {/* <div className="flex flex-wrap justify-center -m-4">
             {renderFilm()}
