@@ -1,5 +1,0 @@
-export const DOMAIN = 'http://movienew.cybersoft.edu.vn/api/'
-export const TOKEN = 'accessToken'
-export const GROUPID = 'GP01'
-export const USER_LOGIN = 'USER_LOGIN'
-export const USER_REGISTER = 'USER_REGISTER'
