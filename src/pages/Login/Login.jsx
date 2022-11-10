@@ -9,8 +9,6 @@ const Login = () => {
   const dispatch = useDispatch()
 
   const { userLogin } = useSelector(state => state.quanLyNguoiDungReducer)
-  console.log("userLogin: ", userLogin);
-
   const formik = useFormik({
     initialValues: {
       taiKhoan: '',
@@ -20,8 +18,6 @@ const Login = () => {
 
       const action = quanLyNguoiDungAction.dangNhapAction(values)
       dispatch(action)
-
-      console.log("values: ", values);
     },
   });
 
@@ -88,3 +84,6 @@ const Login = () => {
 }
 
 export default Login
+
+
+

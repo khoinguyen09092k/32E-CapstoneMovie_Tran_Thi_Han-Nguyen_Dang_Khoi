@@ -1,17 +1,17 @@
 .slick-next {
-    right: 8px !important;
+    right: 10px !important;
 }
 
 .slick-prev {
-    left: -20px !important;
+    left: -30px !important;
     position: relative;
     z-index: 1;
 }
 
 .active_Film {
-    @apply text-gray-50 bg-gray-800
+    @apply text-gray-500 bg-gray-600
 }
 
 .none_active_Film {
-    @apply text-gray-800 bg-gray-300
+    @apply text-gray-800 bg-gray-400
 }

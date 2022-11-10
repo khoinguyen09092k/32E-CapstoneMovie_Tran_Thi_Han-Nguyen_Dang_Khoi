@@ -1,12 +1,12 @@
 import { quanLyDangKyService } from "../../services/QuanLyDangKyService"
-import { DANG_KY_ACTION, SET_THONG_TIN_DANG_KY } from "./types/quanLyDangKyType";
+import { DANG_KY_ACTION, SET_THONG_TIN_DANG_KY } from "./types/quanLiDangKyType";
 import {history} from '../../App'
 
 export const quanLyDangKyAction = {
     dangKyAction: (thongTinDangKy) => {
         return async (dispatch) => {
             try {
-                const result = await quanLyDangKyService.dangNhap(thongTinDangKy)
+                const result = await quanLyDangKyService.dangKy(thongTinDangKy)
                
                     dispatch({
                         type: DANG_KY_ACTION,
@@ -16,7 +16,7 @@ export const quanLyDangKyAction = {
                     history.goBack();
               
             } catch (errors) {
-                const result = await quanLyDangKyService.dangNhap(thongTinDangKy)
+                const result = await quanLyDangKyService.dangKy(thongTinDangKy)
 
                 if (result.data.statusCode === 400) {
                     dispatch({
